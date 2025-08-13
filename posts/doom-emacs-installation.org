@@ -1,0 +1,88 @@
+#+TITLE: Doom emacs notes
+#+AUTHOR: DEMM
+#+TAGS: Emacs, Doom Emacs, macOS, Linux, Windows
+
+* What it's Emacs?
+Emacs* (/ˈiːmæks/), short for "Editor MACroS", is a highly extensible text editor. Its flexibility is almost limitless—you can tweak and transform the vanilla version into something completely different. All extensions are written in a dialect of Lisp called ~Emacs Lisp~. Some purists refer to it as *GNU Emacs*, and they’re right. The original Emacs versions aren’t really used anymore, so when I say *Emacs*, I’m talking about *GNU Emacs* ([[https://en.wikipedia.org/wiki/Emacs][Wiki]]).
+
+* What it's Doom Emacs?
+*Doom Emacs* isn’t the classic video game *Doom*, though it borrows the name. It’s a configuration framework for Emacs—a layer you install on top of Emacs to make it faster, cleaner, and easier to customize. It keeps all the power of vanilla Emacs but adds a curated setup that makes installing features a breeze. With Doom, you can turn Emacs from a simple text editor into a full-blown IDE for multiple languages—or even something that feels like an entire operating system. ([[https://github.com/doomemacs/doomemacs][Doom Emacs GitHub]])
+
+* Why should I use Emacs?
+If I’m writing a post about it, you can probably guess my answer—but let’s be honest: why go through the trouble of installing an old-school text editor, adding a bunch of customizations, and wrestling with configs just to make it work the way you want? It’s true—there are easier, ready-to-use solutions out there. You can pay for an IDE or use one that works out of the box. But here’s the thing: *Emacs works everywhere*. That’s a huge win. You’re not tied to any platform, operating system, or hardware. Once you learn Emacs, you can take it anywhere, reinstall it, make a few tweaks, and boom—you’re back in business. Plus, using a plain text editor like Emacs encourages you to ditch the mouse, which might help you avoid [[https://www.schreibermd.com/blog/2018/8/27/can-using-a-computer-cause-carpal-tunnel-syndrome][carpal tunnel syndrome]] 😄
+
+* You convince-me now I want to install it.
+Awesome! Let’s follow the official [[https://github.com/doomemacs/doomemacs/blob/master/docs/getting_started.org][Doom Emacs Getting Started guide]] to get this mission done. I’ll stick *mostly* to what’s shown there, but I’ll sprinkle in a bit of extra sauce. The core steps are the same, though.
+
+1. First, you'll need a proper package manager:
+
+   - *Windows users*: You’ll want to install ~winget~. It’s not strictly required, but trust me—you’ll thank me later. Just head to the Microsoft Store and search for *App Installer*. That’s the easiest way to get ~winget~ set up. More info here: [[https://learn.microsoft.com/en-us/windows/package-manager/winget/#install-winget][Install Winget]]
+
+   - *macOS users*: You’ll need [[https://brew.sh/][Homebrew]]. If you’re using a Mac and haven’t installed Homebrew yet… well, let’s just say Apple forgot to include this essential tool. To install it, paste this into your terminal:
+     #+begin_src bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+     #+end_src
+
+   - *Linux users*: You're good to go-*Linux* is awesome! 🐧
+
+2. Now, the fun begins!. First, we need to install a few dependencies: [[https://www.gnu.org/software/emacs/][Emacs]] (obviously), [[https://github.com/BurntSushi/ripgrep][ripgrep]], [[https://git-scm.com/][git]], [[https://www.gnu.org/software/findutils/][GNU Find]], [[https://github.com/sharkdp/fd][fd]]
+
+   - *Windows users:* Here's how to install everything using ~winget~ ([[https://winget.ragerworks.com/package/GNU.Emacs][wingetCollection]])
+     #+begin_src powershell
+# Install FindUtils
+winget install --id=GnuWin32.FindUtils -e
+# Install Git
+winget install --id=Git.git -e
+# Install ripgrep
+winget install --id=BurntSushi.ripgrep.GNU -e
+# Install fd
+winget install --id=sharkdp.fd -e
+# Install Emacs
+winget install --id=GNU.Emacs -e
+     #+end_src
+
+   - *macOS users:* There are three ways to install Emacs-two easy, one a bit hardcore ([[https://github.com/jimeh/emacs-builds][Build it yourself]]). I'll stick to the easy ones here and save the DIY method for another post.
+
+     - First, install the dependencies:
+        #+begin_src bash
+# required dependencies
+brew install git ripgrep
+# optional dependencies
+brew install coreutils fd
+# Installs clang
+xcode-select --install
+     #+end_src
+
+     - Then, choose one of these builds [[https://bitbucket.org/mituharu/emacs-mac/overview][emacs-mac]] or [[https://github.com/d12frosted/homebrew-emacs-plus][emacs-plus]]. I personally prefer /emacs-plus/:
+              #+begin_src bash
+brew tap d12frosted/emacs-plus
+brew install emacs-plus --with-native-comp
+ln -s /usr/local/opt/emacs-plus/Emacs.app /Applications/Emacs.app
+              #+end_src
+
+   - *Linux users*: There are many ways to install Emacs depending on your distro, but the flow is the same: (1) install the dependencies, and (2) install /Emacs/. Luckily, /Emacs/ is a standard package in most distributions, so it's usually just a matter of running a single command with your package manager.
+
+3. Now, for the final step-installing /Doom Emacs/ itself:
+
+   - *For All users*
+     #+begin_src bash
+# Clone the Doom Emacs repository into your Emacs configuration directory (should be empty, if no, delete it)
+git clone https://github.com/hlissner/doom-emacs ~/.emacs.d
+
+# Run Doom's installation script, wich:
+# - Sets up the Doom Emacs Enviroment
+# - Installs defalt modules
+# - Generate config files on (~/.doom.d/)
+~/.emacs.d/bin/doom install
+     #+end_src
+
+4. One last thing-before you start using your shiny new setup, it's a good idea to run an upgrade to make sure you've got the latest version of /Doom Emacs/.
+   #+begin_src bash
+~/.emacs.d/bin/doom upgrade
+   #+end_src
+
+This post is already long enough, so I’ll save the cool features and use cases of Doom Emacs for the next one. There’s a lot more to explore—from language support to org-mode magic and even turning Emacs into a full productivity suite.
+
+Stay tuned for part two!
+
+Cheers! 👋

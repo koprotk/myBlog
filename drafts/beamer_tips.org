@@ -1,0 +1,6 @@
+#+TITLE: Beamer pro tips
+#+AUTHOR: DEMM
+#+TAGS:
+
+* What's beamer?
+Beamer accordingly to
