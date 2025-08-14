@@ -2,6 +2,8 @@
 #+AUTHOR: DEMM
 #+TAGS: Emacs, Build, Compile, macOS
 
+[[https://tse2.mm.bing.net/th/id/OIP.hRs9kGhG2RSIcYTaYb72gwHaD4?r=0&rs=1&pid=ImgDetMain&o=7&rm=3]]
+
 * Why Bother Compiling Emacs on macOS When Homebrew Exists?
 Honestly? You probably don’t need to. Homebrew does a solid job. But if you’re chasing:
 

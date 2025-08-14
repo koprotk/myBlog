@@ -1,4 +1,4 @@
-#+TITLE: Doom emacs notes
+#+TITLE: How to install Doom Emacs
 #+AUTHOR: DEMM
 #+TAGS: Emacs, Doom Emacs, macOS, Linux, Windows
 

@@ -1,0 +1,30 @@
+#+TITLE: Doom Emacs my First Steps
+#+AUTHOR: DEMM
+
+[[https://th.bing.com/th/id/R.265e3b5072206a8a6f7823d5c382edac?rik=VnanBjNd2ma4oA&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f240000%2fvelka%2fbaby-walking-away-on-a-forest-road.jpg&ehk=iWPNWSgBtP4TqxIy6Mk6tQRFO9b1ywhvQm5WEd5cfdU%3d&risl=&pid=ImgRaw&r=0]]
+
+* After to install Doom Emacs, what's next?
+** First, understand the emacs config files:
+*** init.el:
+This is the main config files, here you can setup the packages you want for a hugh amount of pre-configurated packages, the only thing you need to said a Doom Emacs that you want that feature/package on your setup is uncomment the line, or adding a flag besides the uncommented line. Every change on this files should be synced, with:
+<<Sync Doom Emacs>>
+#+begin_src bash
+~/.emacs.d/bin/doom sync
+#+end_src
+Or you can use the key shortcut (more easily) ~SPC h r r~
+
+*** package.el:
+Here you can install every package that is outside of ~init.el~ the only thing you need to said a /Doom Emacs/ that you want it is to add the following line:
+#+begin_src emacs-lisp
+(package! name-of-the-package)
+#+end_src
+After every change on this file you should synced ([[Sync Doom Emacs]])
+
+*** config.el:
+Here you specify everything else about configurations, to really understand this file it's necessary to understand ~emacs lisp~. I'll teach you the necessary to understand what it's here, in another post for sure.
+
+* Before moving step forward with the configuration of our ~init.el~.
+As we said, /Emacs/ is a text editor, and /Doom Emacs/ is a layer over /Emacs/ but after all, still be an editor with a customization. What does /Doom Emacs/ to /Emacs/ as text editor? The answer to this is, converting the /Good/ in /Evil/. Sound weird, but in the nerd world /Emacs/ has a evil twin (not exactly a twin but works for the example) called [[https://www.vim.org/][Vim]], What's Vim? Vim is another old-school text editor that run into terminal, in some kind it's very similar to /Emacs/ is a text editor with extremely capabilities of customization, a big community of fans and can be customized using ~lisp~. In the nerd world, you need to choose, but besides that, you can live with both, in addition, I have both on my systems, for quick fix/edition I use /Vim/ and for more intensive use I choose /Emacs/.
+
+* The evil twin has something different that the good?
+Yes, the main difference as user, is that the key shortcuts, and the work flow as text editor is in essence difference. And in the old-school editors that is a big difference. Learn the shortcuts keys are essential to have a healthy work flow and avoid the use of mouse (please use it only for your FPS Games)
