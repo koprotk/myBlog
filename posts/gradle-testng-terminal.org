@@ -1,0 +1,57 @@
+#+TITLE: How to Run a TestNG Test in a Gradle Project via Terminal
+#+AUTHOR: DEMM
+#+TAGS: java, gradle, testng, terminal
+
+
+<img src="https://miro.medium.com/v2/resize:fit:876/1*89FxNOfLuZC4ZxjNbx0Rkg.png">
+
+You can read this article on emacs orgmode, here: [[https://raw.githubusercontent.com/koprotk/myBlog/refs/heads/main/posts/gradle-testng-terminal.org][https://raw.githubusercontent.com/koprotk/myBlog/refs/heads/main/posts/gradle-testng-terminal.org]]
+
+* Background
+A few months ago, I was working on an Emacs script to run ~TestNG~ tests in a ~Gradle~ project (Java language). In IntelliJ IDEA, it's as simple as clicking the play button—magic happens, and the test runs.
+I thought, "No big deal," especially since IntelliJ shows the terminal command it executes. But... it was over 200 lines long 🤣. I couldn’t believe how verbose it was—almost impossible to extract anything useful.
+
+I tried Googling it—nothing. So I turned to AI for help. After a week of what I call vibe-"shit"-coding, I finally got it working... only to find out the project had been migrated to Maven 🤦‍ (in my country we say PLOP!).
+
+Still, I wanted to preserve what I learned. Maybe it'll help someone else in IT. So here it is: two commands—one to run the test, and one to debug it. Hope it’s useful!
+
+* Commands
+** Running a TestNG Test
+Run this from the root folder of your project:
+#+begin_src bash
+java -cp "./build/libs/dependencies/*:./build/classes/java/main:./build/resources/main"
+-Dconfig.dir=./build/classes/java/main/com/folder1/folder2/config
+-Dtestng.test.classpath=./test/com/folder1/folder2/core/suites org.testng.TestNG
+-testclass classpath#methodname
+#+end_src
+To run all methods in a class, remove everything after the # character.
+Replace ~folder1~, ~folder2~ with your actual project structure.
+The ~-Dtestng.test.classpath~ should point to the folder containing your ~testng.xml~ file.
+
+** Debugging with JDB
+1. Start the debugger from the root folder:
+#+begin_src bash
+jdb -sourcepath "./build/classes/java/main:./build/resources/main"
+-classpath "./build/libs/dependencies/*:./build/classes/java/main:./build/resources/main"
+#+end_src
+
+2. Set breakpoints in the terminal like this:
+#+begin_src bash
+stop at fully.qualified.ClassName:lineNumber
+#+end_src
+
+3. Run the test with debugging enabled:
+#+begin_src bash
+run -Dtestng.test.classpath=./test/com/folder1/folder2/core/suites
+-Dconfig.dir=./build/classes/java/main/com/folder1/folder2/config
+org.testng.TestNG -testclass classpath
+#+end_src
+
+- List all breakpoints: ~clear~
+- Resume execution: ~cont~
+- Need help? Type: ~h~
+
+* Final Thoughts
+I wish I could be more precise with the commands and paths, but I don’t currently have a project to test them on. These notes were originally for personal reference, and I’ve turned them into a blog-style post in case they help someone else.
+
+Cheers 👋
