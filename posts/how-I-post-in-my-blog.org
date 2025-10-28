@@ -1,9 +1,47 @@
 #+AUTHOR: DEMM
-#+TITLE: How I post in this blog, and not is not writing on blogger.
+#+TITLE: How I post in this blog, and is not writing on blogger.
 #+TAGS: GitHub, Git, Python, Poetry, Google Cloud  
 
 [[https://www.mundocuentas.com/wp-content/uploads/2020/11/Blogger-logo-mundocuentas.png]]
 
-* How I do this?
+* First
+The first of all, if in the few post of this blog you found a terminal use and a emacs tutorial to install, guess what? I post in this blog in the same way.
 
-Try try try, this is a testing post. 
+* Hands on
+If you wanna to do it same as me, I offer my script for free, you can copy, share o modified as you want, here is [[https://github.com/koprotk/myBlog][https://github.com/koprotk/myBlog]]
+
+* Requirements to use it
++ You need to have a google cloud account (free version is enough) to take the Api blogger.
++ Download your OAUTH2 credentials json file to the folder ~config~ (you need to create it) and rename the file as ~client_secret.json~.
++ At the moment this project only work If you have only one blog on your blogger account. If you need to work with many, you can send me a feature request on the github project.
++ Also you need to install:
+  + Emacs (obvious)
+  + Python
+  + Poetry (python package manager)
+  
+* How to use
++ First of all, you need to clone my repo (if you use HTTPS)
+#+begin_src shell
+git clone https://github.com/koprotk/myBlog.git
+#+end_src
+If you use SSH replace it with:
+#+begin_src shell
+git clone git@github.com:koprotk/myBlog.git
+#+end_src
+  
++ After that, inside project root folder run:
+  #+begin_src shell
+poetry install
+  #+end_src
++ The project work with three folders:
+  + ~config~ folder where you will store your google credential json file.
+  + ~drafs~ folder where you store your drafts posts.
+  + ~posts~ your uploaded post 
++ So the workflow is: first write your draft inside the draft folder, when you are ready to upload to your blog run this command on the project root folder:
+  #+begin_src shell
+poetry run publish-blog your-post.
+  #+end_src
++ That's it.
+
+* Last thing
+Maybe I forgot something, If you need help don't worry you can write me. bye 👋
