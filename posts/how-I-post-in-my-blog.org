@@ -1,0 +1,9 @@
+#+AUTHOR: DEMM
+#+TITLE: How I post in this blog, and not is not writing on blogger.
+#+TAGS: GitHub, Git, Python, Poetry, Google Cloud  
+
+[[https://www.mundocuentas.com/wp-content/uploads/2020/11/Blogger-logo-mundocuentas.png]]
+
+* How I do this?
+
+Try try try, this is a testing post. 
