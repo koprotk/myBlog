@@ -1,20 +1,21 @@
 #+TITLE: Doom Emacs my First Steps
 #+AUTHOR: DEMM
+#+TAGS: emacs, doom emacs, 
 
-[[https://th.bing.com/th/id/R.265e3b5072206a8a6f7823d5c382edac?rik=VnanBjNd2ma4oA&riu=http%3a%2f%2fwww.publicdomainpictures.net%2fpictures%2f240000%2fvelka%2fbaby-walking-away-on-a-forest-road.jpg&ehk=iWPNWSgBtP4TqxIy6Mk6tQRFO9b1ywhvQm5WEd5cfdU%3d&risl=&pid=ImgRaw&r=0]]
+[[https://miro.medium.com/v2/resize:fit:1400/1*tOzQBow5203PvlZAspZUrg.png]]
 
 * After to install Doom Emacs, what's next?
 ** First, understand the emacs config files:
 *** init.el:
-This is the main config files, here you can setup the packages you want for a hugh amount of pre-configurated packages, the only thing you need to said a Doom Emacs that you want that feature/package on your setup is uncomment the line, or adding a flag besides the uncommented line. Every change on this files should be synced, with:
+This is the main config files, here you can setup the packages you want for a huge amount of pre-configurated packages, the only thing you need to said a Doom Emacs that you want that feature/package on your setup is uncomment the line, or adding a flag besides the uncommented line. Every change on this files should be synced, with:
 <<Sync Doom Emacs>>
 #+begin_src bash
-~/.emacs.d/bin/doom sync
+$ <your emacs folder>/bin/doom sync
 #+end_src
 Or you can use the key shortcut (more easily) ~SPC h r r~
 
 *** package.el:
-Here you can install every package that is outside of ~init.el~ the only thing you need to said a /Doom Emacs/ that you want it is to add the following line:
+Here you can install every package that is outside the scope of ~init.el~ the only thing you need to said a /Doom Emacs/ that you want it is to add the following line (of course if that package is in [[https://melpa.org][Melpa]]):
 #+begin_src emacs-lisp
 (package! name-of-the-package)
 #+end_src
@@ -28,3 +29,15 @@ As we said, /Emacs/ is a text editor, and /Doom Emacs/ is a layer over /Emacs/ b
 
 * The evil twin has something different that the good?
 Yes, the main difference as user, is that the key shortcuts, and the work flow as text editor is in essence difference. And in the old-school editors that is a big difference. Learn the shortcuts keys are essential to have a healthy work flow and avoid the use of mouse (please use it only for your FPS Games)
+
+* The first of all, the official documentation
+One of the most important thing working computers is to learn to use the official documentation. The official documentations resolve the 99% of common issues, maybe you can ask the AI to resolve your problems, it's OK, but the best is go to the Documentation first if doesn't resolve it, go to a web forum and, If the previous doesn't help you, go to the AI, this order, not other. To access to the /Doom Emacs/ documentation press ~SPC h d~ this will open a minibuffer with the options (letter) you may tap if you want to go to. In my case I use it all the time, and the most of them, it solve my troubles.
+
+* I want the have the latest version of my Doom Emacs
+To upgrade your doom emacs just:
+#+begin_src shell
+$ sh <Folder where you install it>/bin/doom upgrade
+#+end_src
+
+* That's it
+Conclusion, no conclusion, just use your /Doom Emacs/ have fun, forget to change your PC in the next two decades and: work with it, play with it, learn with it. And after that, go outside and take some ☀️ and do some 🏃. Bye.
