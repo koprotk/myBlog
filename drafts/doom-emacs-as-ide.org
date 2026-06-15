@@ -1,5 +1,17 @@
-#+TITLE: Doom Emacs as IDE
+#+TITLE: Doom Emacs as Java IDE
 #+AUTHOR: DEMM
 
 [[https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_480/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc9f4%2Fvisualstudio_code-card.png]]
 
+* Introduction
+An /IDE/ is an acronymous of Integrate Development Enviroment, is a piece of software that is intendent to be a support for programming, the kind of software in summary is a buch of tool that make the programming task more easilty, notable examples, are: VSCode, IntelliJ, Eclipse, etc. of course /Emacs/ is not an /IDE/ is just a text editor, but this flesibility to be transformed with elisp code in whatever you want allow to the emacs comunity and thanksfully to microsoft for the creation of the standard Lenguage Server Protocol (LSP) our emacs can be a great IDE for work to. I used as my daily programming tool in Java, but its true that it's not superior for non opensource alternatives like IntelliJ, but with a little of work, can be closer to these tools, and even more, in the AI era I'm pretty sure that this kind of open-source tools will be the future, because will be more like a building material for everyone.
+
+In doom emacs is easily to prepare our emacs for a development, just we need to modifie our ~init.el~. To accest to this file just press: ~SPC f P~ (like welcome dashboard said). Every modification in our ~init.el~ should be synced to take effect, so after modified this file you need to press ~SPC h r r~ or close emacs and in the terminal type:
+
+#+begin_src shell
+doom sync
+#+end_src
+
+If you look at your ~init.el~ file you need to uncomment the following lines in addition you need to add some flags in the form of ~+flag~ besides the option to enable it. To followin in deep what does every setup in this file you can press ~SPC h d m~ to search a module (option) and read what's about it.
+
+* Eglot vs LSP-mode
