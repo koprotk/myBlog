@@ -4,17 +4,30 @@
 [[https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_480/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc9f4%2Fvisualstudio_code-card.png]]
 
 * Introduction
-An /IDE/ is an acronymous of Integrate Development Enviroment, is a piece of software that is intendent to be a support for programming, the kind of software in summary is a buch of tool that make the programming task more easilty, notable examples, are: VSCode, IntelliJ, Eclipse, etc. of course /Emacs/ is not an /IDE/ is just a text editor, but this flesibility to be transformed with elisp code in whatever you want allow to the emacs comunity and thanksfully to microsoft for the creation of the standard Lenguage Server Protocol (LSP) our emacs can be a great IDE for work to. I used as my daily programming tool in Java, but its true that it's not superior for non opensource alternatives like IntelliJ, but with a little of work, can be closer to these tools, and even more, in the AI era I'm pretty sure that this kind of open-source tools will be the future, because will be more like a building material for everyone.
+An /IDE/ is an acronymous of Integrate Development Environment, is a piece of software that is intendment to be a support for programming
 
-In doom emacs is easily to prepare our emacs for a development, just we need to modifie our ~init.el~. To accest to this file just press: ~SPC f P~ (like welcome dashboard said). Every modification in our ~init.el~ should be synced to take effect, so after modified this file you need to press ~SPC h r r~ or close emacs and in the terminal type:
+* Introduction
+An /IDE/ is an acronymous of /Integrate Development Environment/, is a piece of software that is intendment to be a support for programming, the kind of software in summary is a bunch of tools that make the programming task more easily, notable examples, are: VSCode, IntelliJ, Eclipse, etc. of course /Emacs/ is not an /IDE/ is just a text editor, but this flexibility to be transformed with elisp code in whatever you want allow to the emacs community and thankfully to Microsoft for the creation of the standard Language Server Protocol (LSP) our emacs can be a great IDE for work to. I used as my daily programming tool in Java, but its true that it's not superior for non open-source alternatives like IntelliJ, but with a little of work, can be closer to these tools, and even more, in the AI era I'm pretty sure that this kind of open-source tools will be the future, because will be more like a building material for everyone.
+
+In doom Emacs is easily to prepare our Emacs as an IDE, we just need to modifies our ~init.el~. To access to this file just press: ~SPC f P~ (like welcome dashboard said). Every modification in our ~init.el~ should be synced to take effect, so after modified this file you need to press ~SPC h r r~ or close Emacs and in the terminal type:
 
 #+begin_src shell
 doom sync
 #+end_src
 
-If you look at your ~init.el~ file you need to uncomment the following lines in addition you need to add some flags in the form of ~+flag~ besides the option to enable it. To followin in deep what does every setup in this file you can press ~SPC h d m~ to search a module (option) and read what's about it.
+If you look at your ~init.el~ file you need to uncomment the lines of the desired features, in addition you need to add some flags in the form of ~+flag~ besides the option enabled. To figure out what flags need the desired feature you can press ~SPC h d m~ to browse in the doom module documentation.
 
 * Eglot vs LSP-mode
-In emacs exist to way to connect to a language server, through LSP-mode or in-build eglot. LSP-mode was the first develop for emacs to work with a LSP on emacs, has more time in the community so this could lead a better support and more stable packages, the in-build wrapper eglot, is more modern, fast, and simple than LSP-mode, in my case, is my option taked. I want to highlight that eglot is not better for LSP-mode, but I prefer it for two reasons (1) is built-in and (2) is faster than LSP-mode. This guide is focused on eglot, but Doom emacs does the thinks very easily to choose one or another.
+In emacs exist two ways to connect to a language server: through ~LSP-mode~ or in-build ~eglot~. ~LSP-mode~ was the first development for emacs to work with a LSP on emacs, has more time in the community so this could lead a better support and a more stable packages, by the other hand the in-build wrapper eglot, is more modern, fast, and simple than ~LSP-mode~, in my case, is my option taken. I want to highlight that eglot is not better for LSP-mode, but I prefer it for two reasons (1) is built-in and (2) is faster than LSP-mode. This guide is focused on eglot, but Doom emacs does the thinks very easily to choose one or another.g, the kind of software in summary is a bunch of tool that make the programming task more easily, notable examples, are: VSCode, IntelliJ, Eclipse, etc. of course /Emacs/ is not an /IDE/ is just a text editor, but this flexibility to be transformed with elisp code in whatever you want allow to the emacs community and thankfully to Microsoft for the creation of the standard Language Server Protocol (LSP) our emacs can be a great IDE for work to. I used as my daily programming tool in Java, but its true that it's not superior for non open-source alternatives like IntelliJ, but proper tweak can be closer to these tools, and even more, in the AI era I'm pretty sure that this kind of open-source tools will be the future, because will be more like a building material for everyone.
 
-*
+* Setup Eglot in Doom
+
+In doom emacs is easily to prepare our emacs as an IDE, we just need to modifies our ~init.el~. To access to this file just press: ~SPC f P~ (like welcome dashboard said). Every modification in our ~init.el~ should be synced after to take effect, so after modified this file you need to press ~SPC h r r~ or close emacs and in the terminal type:
+
+#+begin_src shell
+doom sync
+#+end_src
+
+For every new feature that you need first I recommend to at your ~init.el~ file, for that you need to uncomment the lines of the desired features, in addition you need to add some flags in the form of ~+flag~ besides the option enabled if it's necessary. To figure out what flags need the desired feature you can press ~SPC h d m~ to browse in the doom module documentation.
+
+For this case we need to have this line in the ~tools~ section:
