@@ -1,0 +1,10 @@
+#+TITLE: Title
+#+AUTHOR: DEMM
+
+[ [ choose an URL image ] ]
+
+* El contexto: ¿Qué estabas haciendo antes? (Ej: "Estaba configurando Doom Emacs para Python...").
+* El problema: ¿Qué se rompió o qué querías mejorar?
+* El proceso (lo que probaste): Enumera 2 o 3 cosas que fallaron (esto da mucho texto y ayuda a otros).
+* La solución: El código, el comando o el truco definitivo.
+* La reflexión: ¿Por qué funciona? ¿Qué aprendiste?

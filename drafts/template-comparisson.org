@@ -1,0 +1,27 @@
+#+TITLE: [Tema] vs [Contratema]: [Frase que sintetice el conflicto]
+#+DATE: [Fecha]
+#+TAGS: opinion, comparativa, ciencias
+
+* Introducción
+
+[Presenta las dos posturas o conceptos que vas a comparar. Explica por qué vale la pena enfrentarlos.]
+
+* Cara A: [Nombre de la primera perspectiva]
+
+** En qué consiste
+** Argumentos a favor
+** Puntos débiles o críticas
+
+* Cara B: [Nombre de la segunda perspectiva]
+
+** En qué consiste
+** Argumentos a favor
+** Puntos débiles o críticas
+
+* Análisis: ¿Son realmente opuestos?
+
+[Aquí viene tu opinión. Quizás no son excluyentes, quizás uno es más sólido que otro, quizás el debate está mal planteado.]
+
+* Conclusión personal
+
+[Cuál es tu postura y por qué. O si no la tienes, explica por qué es un falso dilema.]

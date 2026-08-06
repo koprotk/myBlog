@@ -1,0 +1,19 @@
+#+TITLE: [El título debe crear intriga]
+#+DATE: [Fecha]
+#+TAGS: divulgacion, historia, ciencias
+
+* Escena 1: El problema o el misterio
+
+[Empieza in medias res: una situación concreta, un personaje, una pregunta que nadie podía responder.]
+
+* Escena 2: El camino hacia la respuesta
+
+[Explica los intentos fallidos, los errores, los callejones sin salida. Esto humaniza la ciencia/historia.]
+
+* Escena 3: El hallazgo o la solución (o el giro)
+
+[Cómo se llegó a la respuesta actual (o a un nuevo enigma).]
+
+* Epílogo: Y ahora, ¿qué?
+
+[Consecuencias de ese descubrimiento. Cómo cambió nuestra visión del mundo. O qué preguntas quedan abiertas.]

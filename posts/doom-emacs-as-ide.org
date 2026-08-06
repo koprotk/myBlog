@@ -1,0 +1,38 @@
+#+TITLE: Doom Emacs as IDE
+#+AUTHOR: DEMM
+#+TAGS: IDE, eglot, emacs, lsp
+
+[[https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,c_fill,w_480/https%3A%2F%2Fubuntu.com%2Fwp-content%2Fuploads%2Fc9f4%2Fvisualstudio_code-card.png]]
+
+* Introduction
+An /IDE/ is an acronym for /Integrated Development Environment/, a piece of software intended to support programming. In short, it's a bunch of tools that make the programming task easier. Notable examples are VSCode, IntelliJ, Eclipse, etc.
+
+Of course /Emacs/ is not an /IDE/, it's just a text editor. But its flexibility to be transformed with elisp code into whatever you want allows the Emacs community to build great IDEs. And thanks to Microsoft for creating the standard Language Server Protocol (LSP), our Emacs can be a great IDE to work with.
+
+I use it as my daily programming tool in Java. It's true that it isn't superior to non-open-source alternatives like IntelliJ, but with a little work it can be closer to these tools. And even more, in the AI era I'm pretty sure this kind of open-source tool will be the future, because it will be more like a building material for everyone.
+
+* Eglot vs LSP-mode
+In Emacs there are two ways to connect to a language server: through ~LSP-mode~ or the built-in ~eglot~. ~LSP-mode~ was the first development for Emacs to work with an LSP; it has more time in the community, so this could lead to better support and more stable packages. On the other hand, the built-in wrapper ~eglot~ is more modern, fast, and simple than ~LSP-mode~. In my case, it's the option I chose.
+
+I want to highlight that eglot is not better than LSP-mode, but I prefer it for two reasons: (1) it's built-in and (2) it's faster than LSP-mode. This guide is focused on eglot, but Doom Emacs makes it very easy to choose one or the other.
+
+* Setup Eglot in Doom
+In Doom Emacs it's easy to prepare Emacs as an IDE; we just need to modify our ~init.el~. To access this file just press ~SPC f P~ (like the welcome dashboard says). Every modification in our ~init.el~ should be synced to take effect, so after modifying this file you need to press ~SPC h r r~, or close Emacs and in the terminal type:
+
+#+begin_src shell
+doom sync
+#+end_src
+
+For every new feature that you need, first I recommend you look at your ~init.el~ file. For that, you need to uncomment the lines of the desired features and add some flags in the form of ~+flag~ next to the enabled option if necessary. To figure out which flags the desired feature needs, you can press ~SPC h d m~ to browse the Doom module documentation.
+
+For this case we need to have this line in the ~tools~ section:
+
+#+begin_src emacs-lisp
+(lsp +eglot)
+#+end_src
+
+Save the file, then sync your Doom Emacs with the instructions above and the eglot backend will be ready.
+
+* Choose your fighter
+
+Now you're ready, and the next steps are up to you. In the ~lang~ section of your ~init.el~ you need to uncomment and add the proper flags for the languages you need. You should read the documentation before making any changes — some languages need dependencies to be installed before setting things up in the ~init.el~ file. So you need to read; ~SPC h d m~ is your friend.

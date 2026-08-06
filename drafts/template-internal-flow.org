@@ -1,0 +1,23 @@
+#+TITLE: [Confesión o pregunta honesta]
+#+DATE: [Fecha]
+#+TAGS: opinion, reflexion, personal
+
+* El disparador
+
+[Qué vi, leí, escuché o viví que me hizo empezar a pensar en esto.]
+
+* Lo que siempre creí
+
+[Mi postura inicial, mi prejuicio o mi ignorancia sobre el tema.]
+
+* El momento de quiebre
+
+[El instante en que algo no encajó. Una contradicción, un dato nuevo, una conversación que me hizo dudar.]
+
+* Dónde estoy ahora
+
+[No hace falta tener una respuesta definitiva. Explica cómo ves el tema ahora, con más matices o más preguntas.]
+
+* Para terminar
+
+[Una reflexión final sincera. Puede ser una conclusión provisional o una invitación al lector a compartir su perspectiva.]

@@ -1,0 +1,34 @@
+#+TITLE: [Título provocador o pregunta]
+#+DATE: [Fecha]
+#+TAGS: opinion, ciencias, humanidades
+
+* Introducción: El gancho
+
+[Primera frase que atrape al lector. Puede ser: una pregunta, una anécdota personal, un dato sorprendente o una cita célebre.]
+
+[Presenta el tema central. Explica *por qué* es relevante ahora o para ti.]
+
+[Tesis: la idea principal que vas a defender o explorar.]
+
+* Desarrollo: Los argumentos
+
+** Primer punto: [Nombre del argumento]
+
+[Explica este aspecto del tema. Usa ejemplos concretos, analogías o referencias a libros/películas/historia.]
+
+** Segundo punto: [Nombre del argumento]
+
+[Profundiza en otra faceta. Puedes contrastarlo con el punto anterior o complementarlo.]
+
+** (Opcional) Tercer punto o matiz
+
+[Si el tema lo requiere, añade un contrapunto, una objeción o una perspectiva alternativa.]
+
+* Conclusión: El cierre
+
+[Vuelve a la idea principal, pero ahora con una visión enriquecida.]
+
+[Frase final potente: pregunta abierta, llamado a la acción, reflexión personal o conexión con el inicio.]
+
+* Referencias o lecturas recomendadas (opcional)
+- [Libro/artículo/película que inspiró el post]
