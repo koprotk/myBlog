@@ -1,0 +1,55 @@
+#+TITLE: IA y desempleo
+#+BIBLIOGRAPHY: refs.bib
+#+TAGS: opinion, diff, actuallity, tech, ai
+
+[[https://www.shutterstock.com/image-vector/artificial-intelligence-replacing-humans-ai-600w-2789369157.jpg]]
+
+* Introducción
+
+Actualmente mucho se dice que la IA nos reemplazará que los trabajos de oficina están acabados y que sin remedio deberás aprender un oficio (ej. gasfitería) o esperar que la IA tome tu empleo.
+
+[Presenta las dos posturas o conceptos que vas a comparar. Explica por qué vale la pena enfrentarlos.]
+
+* Cara A: [Nombre de la primera perspectiva]
+
+** En qué consiste
+** Argumentos a favor
+** Puntos débiles o críticas
+
+* Cara B: [Nombre de la segunda perspectiva]
+
+** En qué consiste
+** Argumentos a favor
+** Puntos débiles o críticas
+
+* Análisis: ¿Son realmente opuestos?
+
+[Aquí viene tu opinión. Quizás no son excluyentes, quizás uno es más sólido que otro, quizás el debate está mal planteado.]
+
+* Conclusión personal
+
+[Cuál es tu postura y por qué. O si no la tienes, explica por qué es un falso dilema.]
+
+#+PRINT_BIBLIOGRAPHY:
+#+begin_src bibtex :tangle refs.bib
+@article{autor2026,
+  author  = {Pérez, Juan},
+  title   = {Un estudio sobre la Tierra},
+  journal = {Revista de Ciencia},
+  year    = {2026}
+}
+
+@book{smith2024,
+  author    = {Smith, John},
+  title     = {The Big Book of Data},
+  publisher = {Tech Press},
+  year      = {2024}
+}
+
+@online{wikipedia2026,
+  author   = {{Colaboradores de Wikipedia}},
+  title    = {Org-mode: Sistema de organización},
+  year     = {2026},
+  url      = {https://wikipedia.org},
+  urldate  = {2026-08-07}
+#+end_src
