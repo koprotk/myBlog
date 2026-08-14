@@ -1,0 +1,49 @@
+#+TITLE: Doom Emacs shortcuts
+#+AUTHOR: DEMM
+#+TAGS: emacs, shortcuts, functions
+
+[[https://www.onehub.com/blog/wp-content/uploads/2021/12/Shortcut-1200x900-1-960x640.jpg]]
+
+* Intro
+In Emacs, when you open a file, different /modes/ are activated that let you invoke specific features related to that file. For example: if you open a LaTeX file, you will be able to invoke a function that compiles it. To do things faster, Emacs makes heavy use of shortcuts to invoke these features — there are more features/functions than available shortcuts. The amount of features per mode is often huge, and if you multiply those shortcuts across every mode, the number of things to memorize is enormous. Emacs relies on muscle memory, but that is not easy to build; to have muscle memory you need to use it. So I recommend keeping notes about the shortcut that invokes the feature you need. Sometimes an upgrade changes or removes a shortcut, but the feature/function name usually remains. In that case, I recommend keeping a notebook with three entries: 1) feature (what it does), 2) function name (how it is called when you type ~M-x~), 3) shortcut (eg: ~SPC o d~). And that is exactly what I'll provide in this blog.
+
+* Some conventions on the shortcut key notation:
+- ~C~ is for ~Control~ key
+- ~M~ is for ~meta~, ~option~ key or ~Alt~ key
+- ~C-c~ the line means press both, in this case ~Control~ and ~c~
+- ~C c~ the space means press first and after, in this case: press ~Control~ and after ~c~
+
+* About typing
+In Emacs there are two ways of typing: /God mode/ and /Evil mode/. /Doom Emacs/ uses the second, so when you use a shortcut make sure you are in /normal/ mode, not /insert/ mode or /visual/ mode. The names of these modes are inherited from VIM.
+
+* How to set up a custom shortcut in Doom Emacs
+There are different ways to do it. If you use Evil mode, it is common (though not required) to use a leader key; the common leader key is ~SPC~ (space bar). To add a custom shortcut you write a small Elisp snippet in your ~config.el~ file. These are the possibilities:
+- Global bind
+  #+begin_src emacs-lisp
+ (map! "C-c d" #'my-function)
+  #+end_src
+- leader (SPC) bind — ~SPC o d~
+  #+begin_src emacs-lisp
+ (map! :leader "o d" #'my-function)
+  #+end_src
+- localleader (~SPC m~) bind
+  #+begin_src emacs-lisp
+ (map! :localleader "x" #'my-function)
+  #+end_src
+- evil-state scoped: ~:n~ normal, ~:i~ insert, ~:v~ visual, ~:nv~ normal+visual
+  #+begin_src emacs-lisp
+ (map! :n "j" #'evil-next-visual-line)
+  #+end_src
+- mode-specific
+  #+begin_src emacs-lisp
+ (map! :map org-mode-map :n "C-c x" #'my-function)
+  #+end_src
+- unbind
+  #+begin_src emacs-lisp
+ (map! "C-c d" nil)
+  #+end_src
+
+ Remember that every edit to your ~config.el~ needs a Doom Emacs reload (~SPC h r r~). If you added a new package, run ~doom sync~ in a shell and restart Emacs.
+
+* How to look up documentation
+If you have doubts about a function, call ~helpful-callable~ with ~SPC h f~ and type the function name. If you don't remember the function name but you remember the shortcut, call ~helpful-key~ with ~SPC h k~ and press the shortcut.

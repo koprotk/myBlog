@@ -1,3 +1,0 @@
-#+TITLE: DOOM Emacs Notes: Some tips
-#+AUTHOR: DEMM
-#+TAGS: emacs, shortcuts, functions
