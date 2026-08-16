@@ -1,0 +1,32 @@
+#+TITLE: Install StarCraft 1 and/or 2 on Cachy OS
+#+AUTHOR: DEMM
+
+[[https://store-images.s-microsoft.com/image/apps.11562.14124222480596136.ed20a9aa-83ad-4957-99bb-a6b44ee47223.966f09b0-5e8c-47d6-ada0-7714b0cb26e8?q=90&w=480&h=270]]
+
+* A little bit of context
+Long time ago I was playing the original StarCraft on a Windows 98 (I guess), time passes and I bought it again with StarCraft 2 ten years ago, and I played both on a Windows 10... or 7? I guess, time passes too fast, maybe I'm wrong, but now I'm not a Windows user anymore and I wanna play SC1 and SC2 again, so I decided to give them a chance on my Lenovo laptop with CachyOS.
+
+* The issue
+Well, I think it's not necessary to go too deep into the issue: there isn't a native Linux version of StarCraft or even Battle.net, so we need to figure out how to do it. Browsing the internet (yes, browsing, I don't use AI as first option for this type of things).
+
+* Looking for help
+I found this incredible guide ([[https://gist.github.com/kriegalex/4a74c19f8aefd7487ef87854306be93e]]) that was supposed to solve my issue, turn off my brain and just follow it, but it fails. So, what can I do? Follow my instincts and do it simpler. So this is what I did.
+
+* How I solved it
+First, prepare your system for playing:
+1. Open ~CachyOS Hello~ click on ~Apps/Tweaks~ and inside click on ~Install Gaming Package~ and follow the instructions (I found this guide to prepare your system: [[https://wiki.cachyos.org/configuration/gaming/]])
+2. If everything goes well you will find ~Lutris~ as a new application on your system. Open it.
+3. Inside ~Lutris~ click on ~Add game~ the plus sign (+) and click the option: ~Search the lutris website for installers~
+4. Type ~Battle Net~ and press enter
+5. In the list select the first match by clicking. A modal will be open.
+6. Click ~Install~
+7. Follow the instructions
+
+That's it. After installing Battle.net, open it, install SC1 and/or SC2 and play it. Everything will work as expected.
+
+
+* Conclusion
+
+~Cachy OS~ is an amazing OS for gaming and as a daily driver: it's fast, has great performance and great documentation, and it's my primary OS. Something is a little boring because everything just works at first, maybe I'll return to Gentoo, but since I don't have enough time, I'll keep it here.
+
+Happy playing.

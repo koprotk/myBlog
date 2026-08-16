@@ -6,21 +6,20 @@
 
 * Introducción
 
-Actualmente mucho se dice que la IA nos reemplazará que los trabajos de oficina están acabados y que sin remedio deberás aprender un oficio (ej. gasfitería) o esperar que la IA tome tu empleo.
+Actualmente mucho se dice que la IA nos reemplazará (cita-cita) que los trabajos de oficina están acabados (cita) y que sin remedio deberás aprender un oficio (ej. gasfitería) o esperar que la IA tome tu empleo. (cita).
 
-[Presenta las dos posturas o conceptos que vas a comparar. Explica por qué vale la pena enfrentarlos.]
+Por otro lado, otros dicen que la IA no te reemplazará (cita) pero si aquellos que sepan usarla (cita), e incluso dicen alguno que la IA creará más empleos de los que destruirá. (cita)
 
-* Cara A: [Nombre de la primera perspectiva]
+* Algunos datos
 
-** En qué consiste
-** Argumentos a favor
-** Puntos débiles o críticas
+** Datos, tazas de desempleo,
+** Indicadores económicos de desempleo e IA.
+** Antes y después
 
-* Cara B: [Nombre de la segunda perspectiva]
+* Lo que yo he vivido como tech-guy
 
-** En qué consiste
-** Argumentos a favor
-** Puntos débiles o críticas
+** Antes
+** Ahora
 
 * Análisis: ¿Son realmente opuestos?
 
