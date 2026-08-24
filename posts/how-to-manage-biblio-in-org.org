@@ -1,0 +1,36 @@
+#+TITLE: How to manage bibliography in Org
+#+AUTHOR: DEMM
+#+TAGS: bibliography,biblatex,citation,academic
+
+[[https://i0.wp.com/lawnotes.co/wp-content/uploads/2024/02/download-1.jpeg]]
+
+* Introduction
+Dealing with bibliography is not trivial; you need to focus on what you are working with to produce a serious manuscript. To make this easier, there are many ways to manage bibliography in almost every writing app, and Emacs is no exception. You can manage a bibliography easily in org-mode without pain, but everything starts with your bibliography file (a ~.bib~ file). If you don't have one, check my previous blog post: [[https://blogencompilacion.blogspot.com/2025/12/ebib-notes-because-bibliographies.html][Ebib Notes]].
+
+* I have my ~bib~ file so now what?
+Every org file has a preamble where you declare things like the title, the author, and the path to your bib file. You can put something like this at the very beginning of your file:
+#+begin_src org
+,#+TITLE: Your document title
+,#+AUTHOR: Maybe your nickname
+,#+CITE_EXPORT: biblatex apa
+,#+BIBLIOGRAPHY: your/path/to/biblio.bib
+#+end_src
+
+These entries are used when you export your org file. Use them, because the exporter needs to know the title and the author name so it can place them where they belong on export. The bibliography system works like this: Emacs reads your bib file so that when you want to insert a citation in your text, the suggestion list is built from your ~.bib~ file.
+
+Take into account that I use the property ~#+CITE_EXPORT: biblatex apa~. This means we use ~biblatex~ as the citation engine, and the citation style is APA — both handled by the LaTeX package ~biblatex~.
+
+* How can I insert a citation in my document?
+To do it, put your cursor where you want the citation and follow these steps:
+1. Press ~SPC m @~ (calls ~org-cite-insert~).
+2. Navigate to the entry with the arrow keys; when you find it, press ~ENTER~.
+3. You will then be prompted in a minibuffer. Type ~;~ to add another reference, or specify a page with ~, p. 123~ (single page) or ~, pp. 1-3~ (page range).
+4. When you're done, press ~C-M-m~ to finish (remember ~M~ is the meta or ALT key). Do not press plain ~RET~ in the minibuffer — that adds another citation instead of finishing.
+
+Do you need to cite without the author name? Modify the citation entry to this form: ~[cite/noauthor/bare:@key]~.
+
+* Now I need to print my bibliography
+To print your bibliography in the document, add ~#+PRINT_BIBLIOGRAPHY:~ where you want it to appear. This command inserts the bibliography with a default header. If you don't want that header (for example, because you want to write your own heading instead of the one the export engine adds), use ~#+PRINT_BIBLIOGRAPHY: :heading none~ instead.
+
+* Conclusion
+Dealing with bibliographies, citation styles, and all this stuff is easy with org-mode. Please don't waste money on writing apps — everything you need is already here, and free.

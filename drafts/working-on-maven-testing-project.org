@@ -1,0 +1,46 @@
+#+TITLE: Working on a Testing Project on Maven using Emacs
+#+AUTHOR: DEMM
+#+TAGS: emacs, testing, maven, java, jdtls, lsp, ai, skill
+
+* Introduction
+
+As a developer or automation QA, it is common to face automation projects built with Java and Maven, and IDEs like /IntelliJ/ or /VSCode/ are the usual day-to-day tools. This post aims to change that by adding a better tool: /Emacs/. As I mentioned before, I use /Doom Emacs/, so this guide is focused on /Doom Emacs/ users; but if you're not one, no worries — all the wrappers shown here are agnostic to any Emacs framework.
+
+* Before we start
+
+Every /IDE/ works with an /LSP/; to be honest, the LSP does the real job and the IDE just helps you interact with it (put bluntly). For Java, the king of the open-source LSPs is [[https://github.com/eclipse-jdtls/eclipse.jdt.ls][eclipse-jdtls]] (VSCode uses it), so as a prerequisite you need to install it on your system. Make sure the ~jdtls~ command is available from any terminal. Once that is done, we can continue.
+
+* Installing the Eglot wrapper.
+
+[[https://github.com/joaotavora/eglot][Eglot]] helps us communicate Emacs with the /LSP/. It's not magic: it uses [[https://elpa.gnu.org/packages/jsonrpc.html][jsonrpc]] as the transport that connects both sides — the /LSP/ running outside /Emacs/, and /Emacs/ itself. ~eglot~ is built-in to Emacs, so you don't need to install anything to get it, and it even ships with minimal ~jsonrpc~ parameters to connect with ~jdtls~. Unfortunately, the minimal ~jsonrpc~ config for ~jdtls~ is not enough to work properly with this kind of project, so we need to enable more features (which translates into more ~jsonrpc~ tweaks). That is where my personal project comes in to help us.
+
+* Eglot-helpers-java
+
+That awful name is my project. It lets us properly set up ~jsonrpc~ to take advantage of ~jdtls~ features in Emacs (which the built-in config doesn't cover), and on the other hand, it ships with a small number of methods we can call to execute an automated test class or a single test method, debug, compile, and update some internal auxiliary files the project needs.
+
+As another prerequisite, we also need to install [[https://github.com/svaante/dape][dape]], which lets us debug with an experience close to the VSCode one (not identical, but close).
+
+To install it, add this to your ~packages.el~ file in your Doom Emacs personal config:
+
+#+begin_src emacs-lisp
+(package! eglot-helpers-java
+  :recipe (:host github :repo "koprotk/eglot-helpers-java"))
+#+end_src
+
+Sync your Emacs (in your terminal: ~doom sync~) and that's it.
+
+* How to use it
+
+Once everything is installed, open a Java file (your test class) and start eglot (~M-x eglot~). Once started, it should connect to ~jdtls~. If everything is working properly, you should be able to:
+
+** Run tests
+- Run your test class with ~eglot-helpers-java-run-test-class~.
+- Run a single test method with ~eglot-helpers-java-run-test-method~.
+- Debug (via dape) with ~eglot-helpers-java-debug-test-method~. To set a breakpoint, use ~dape-breakpoint-toggle~ (~C-x C-a C-b~) on the target line.
+- Compile your project with ~eglot-helpers-java-build-workspace~.
+
+** If something is broken
+If something doesn't work properly, run ~eglot-helpers-java-wipe-workspace~.
+
+* I want to know more about this project
+Go to [[https://github.com/koprotk/eglot-helpers-java][eglot-helpers-java on GitHub]].
